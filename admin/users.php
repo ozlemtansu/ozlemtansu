@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Users</title>
+	<title>Pano - Kullanıcılar</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -23,8 +23,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">All Users 
-	 		<a href="../signup.php" class="btn btn-success">Add New</a></h3>
+	 	<h3 class="mb-3">Tüm Kullanıcılar
+	 		<a href="../signup.php" class="btn btn-success">Yeni Ekle</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -42,9 +42,9 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		  <thead>
 		    <tr>
 		      <th scope="col">#</th>
-		      <th scope="col">Full Name</th>
-		      <th scope="col">username</th>
-		      <th scope="col">Action</th>
+		      <th scope="col">İsim Soyisim</th>
+		      <th scope="col">Kullanıcı Adı</th>
+		      <th scope="col">İşlem</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -54,7 +54,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		      <td><?=$user['fname'] ?></td>
 		      <td><?=$user['username'] ?></td>
 		      <td>
-		      	<a href="user-delete.php?user_id=<?=$user['id'] ?>" class="btn btn-danger">Delete</a>
+		      	<a href="user-delete.php?user_id=<?=$user['id'] ?>" class="btn btn-danger">Sil</a>
 		      </td>
 		    </tr>
 		    <?php } ?>
@@ -63,7 +63,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		</table>
 	<?php }else{ ?>
 		<div class="alert alert-warning">
-			Empty!
+			Boş!
 		</div>
 	<?php } ?>
 	 </div>

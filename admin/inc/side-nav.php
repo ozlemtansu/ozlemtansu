@@ -4,7 +4,7 @@
  ?>
 <input type="checkbox" id="checkbox">
 	<header class="header">
-		<h2 class="u-name">My <b>Blog</b>
+		<h2 class="u-name">Benim <b>Blogum</b>
 			<label for="checkbox">
 				<i id="navbtn" class="fa fa-bars" aria-hidden="true"></i>
 			</label>
@@ -25,37 +25,37 @@
 				<li >
 					<a href="Users.php">
 						<i class="fa fa-users" aria-hidden="true"></i>
-						<span>Users</span>
+						<span>Kullanıcılar</span>
 					</a>
 				</li>
 				<li>
 					<a href="Post.php">
 						<i class="fa fa-wpforms" aria-hidden="true"></i>
-						<span>Post</span>
+						<span>Gönderi</span>
 					</a>
 				</li>
 				<li>
 					<a href="Category.php">
 						<i class="fa fa-window-restore" aria-hidden="true"></i>
-						<span>Category</span>
+						<span>Kategoriler</span>
 					</a>
 				</li>
 				<li>
 					<a href="Comment.php">
 						<i class="fa fa-comment-o" aria-hidden="true"></i>
-						<span>Comment</span>
+						<span>Yorumlar</span>
 					</a>
 				</li>
 				<li>
 					<a href="#">
 						<i class="fa fa-cog" aria-hidden="true"></i>
-						<span>Setting</span>
+						<span>Ayarlar</span>
 					</a>
 				</li>
 				<li>
 					<a href="../logout.php">
 						<i class="fa fa-power-off" aria-hidden="true"></i>
-						<span>Logout</span>
+						<span>Çıkış</span>
 					</a>
 				</li>
 			</ul>

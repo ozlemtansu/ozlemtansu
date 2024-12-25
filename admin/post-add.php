@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Create Post</title>
+	<title>Pano - Gönderi Oluştur</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -28,8 +28,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">Create New Post
-	 		<a href="post.php" class="btn btn-secondary">Posts</a></h3>
+	 	<h3 class="mb-3">Yeni Gönderi Oluştur
+	 		<a href="post.php" class="btn btn-secondary">Gönderiler</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -48,7 +48,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     	      enctype="multipart/form-data">
 
 		  <div class="mb-3">
-		    <label class="form-label">Title</label>
+		    <label class="form-label">Başlık</label>
 		    <input type="text" 
 		           class="form-control"
 		           name="title">
@@ -56,19 +56,19 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		  </div>
 
 		  <div class="mb-3">
-		    <label class="form-label">Cover Image</label>
+		    <label class="form-label">Kapak Resmi</label>
 		    <input type="file" 
 		           class="form-control"
 		           name="cover">
 		  </div>
 		  <div class="mb-3">
-		    <label class="form-label">Text</label>
+		    <label class="form-label">Metin</label>
 		    <textarea
 		           class="form-control text"
 		           name="text"></textarea>
 		  </div>
 		  <div class="mb-3">
-		    <label class="form-label">Category</label>
+		    <label class="form-label">Kategori</label>
 		    <select name="category" class="form-control">
 		    	<?php foreach ($categories as $category) { ?>
 		    	<option value="<?=$category['id']?>">
@@ -77,7 +77,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		    </select>
 		    
 		  </div>
-		  <button type="submit" class="btn btn-primary">Create</button>
+		  <button type="submit" class="btn btn-primary">Oluştur</button>
 		</form>
 	 </div>
 	</section>

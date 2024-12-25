@@ -9,7 +9,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
       $id = $_POST['id'];
 
       if(empty($category)){
-         $em = "Category is required"; 
+         $em = "Kategori gerekli"; 
          header("Location: ../category-edit.php?error=$em&id=$id");
          exit;
       }
@@ -20,11 +20,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
     
       
      if ($res) {
-          $sm = "Successfully edited!"; 
+          $sm = "Başarıyla güncellendi!"; 
           header("Location: ../category-edit.php?success=$sm&category=$category&id=$id");
           exit;
       }else {
-        $em = "Unknown error occurred"; 
+        $em = "Bilinmeyen bir hata oluştu"; 
         header("Location: ../category-edit.php?error=$em&id=$id");
         exit;
       }

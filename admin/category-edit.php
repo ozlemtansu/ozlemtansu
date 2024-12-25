@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && $_GET['id'])
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Category Edit</title>
+	<title>Pano - Kategori Düzenleme</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -31,8 +31,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && $_GET['id'])
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">Edit
-	 		<a href="Category.php" class="btn btn-success">Category</a></h3>
+	 	<h3 class="mb-3">Kategori Düzenle
+	 		<a href="Category.php" class="btn btn-success">Kategori</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -49,7 +49,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && $_GET['id'])
     	      method="post">
 
 		  <div class="mb-3">
-		    <label class="form-label">Category</label>
+		    <label class="form-label">Kategeori</label>
 		    <input type="text" 
 		           class="form-control"
 		           name="category"
@@ -61,7 +61,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) && $_GET['id'])
 		           hidden>
 		  </div>
 		  
-		  <button type="submit" class="btn btn-primary">Create</button>
+		  <button type="submit" class="btn btn-primary">Kaydet</button>
 		</form>
 	 	
 	 </div>

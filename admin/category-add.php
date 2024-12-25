@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Category</title>
+	<title>Pano- Kategori</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -20,8 +20,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">Create New  Category
-	 		<a href="Category.php" class="btn btn-success">Category</a></h3>
+	 	<h3 class="mb-3">Yeni Kategori Oluştur
+	 		<a href="Category.php" class="btn btn-success">Kategoriler</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -38,13 +38,13 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
     	      method="post">
 
 		  <div class="mb-3">
-		    <label class="form-label">Category</label>
+		    <label class="form-label">Kategori Adı</label>
 		    <input type="text" 
 		           class="form-control"
 		           name="category">
 		  </div>
 		  
-		  <button type="submit" class="btn btn-primary">Create</button>
+		  <button type="submit" class="btn btn-primary">Oluştur</button>
 		</form>
 	 	
 	 </div>

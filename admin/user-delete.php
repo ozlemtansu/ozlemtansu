@@ -10,11 +10,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])
   include_once("../db_conn.php");
   $res = deleteById($conn, $user_id);
   if ($res) {
-      $sm = "Successfully deleted!"; 
+      $sm = "Başarıyla silindi!"; 
       header("Location: users.php?success=$sm");
       exit;
   }else {
-    $em = "Unknown error occurred"; 
+    $em = "Bilinmeyen bir hata oluştu!"; 
     header("Location: users.php?error=$em");
     exit;
   }

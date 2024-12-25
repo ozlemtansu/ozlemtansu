@@ -14,19 +14,19 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
       $id = $_SESSION['admin_id'];
 
       if(empty($cpass)){
-         $em = "Current Password is required"; 
+         $em = "Mevcut şifre gerekli"; 
          header("Location: ../profile.php?perror=$em#cpassword");
          exit;
       }else if(empty($new_pass)){
-         $em = "New Password is required"; 
+         $em = "Yeni şifre gerekli"; 
          header("Location: ../profile.php?perror=$em#cpassword");
          exit;
       }else if(empty($cnew_pass)){
-         $em = "Confirm Password is required"; 
+         $em = "Şifre onayı gerekli"; 
          header("Location: ../profile.php?perror=$em#cpassword");
          exit;
       }else if($cnew_pass != $new_pass){
-         $em = "New password and confirm password doesn't match"; 
+         $em = "Yeni şifre ve onay şifresi uyuşmuyor"; 
          header("Location: ../profile.php?perror=$em#cpassword");
          exit;
       }
@@ -38,7 +38,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
        $data = $stmt->fetch();
 
       if(!password_verify($cpass, $data['password'])){
-         $em = "Incorect password"; 
+         $em = "Yanlış şifre"; 
          header("Location: ../profile.php?perror=$em#cpassword");
          exit;
       }else {
@@ -49,11 +49,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
           $stmt = $conn->prepare($sql);
           $res = $stmt->execute([$new_pass]);
          if ($res) {
-              $sm = "The Password Successfully changed!"; 
+              $sm = "Şifre başarıyla değiştirildi!"; 
               header("Location: ../profile.php?psuccess=$sm#cpassword");
               exit;
           }else {
-            $em = "Unknown error occurred"; 
+            $em = "Bilinmeyen bir hata oluştu"; 
             header("Location: ../profile.php?perror=$em#cpassword");
             exit;
           }

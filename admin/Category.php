@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Category</title>
+	<title>Pano - Kategori</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -23,17 +23,17 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">All Categories 
-	 		<a href="Category-add.php" class="btn btn-success">Add New</a></h3>
+	 	<h3 class="mb-3">Tüm Kategoriler 
+	 		<a href="Category-add.php" class="btn btn-success">Yeni Kategori Ekle</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
-			<?=htmlspecialchars($_GET['error'])?>
+			Hata:<?=htmlspecialchars($_GET['error'])?>
 		</div>
 	    <?php } ?>
 
         <?php if (isset($_GET['success'])) { ?>	
 	 	<div class="alert alert-success">
-			<?=htmlspecialchars($_GET['success'])?>
+			Başarılı<?=htmlspecialchars($_GET['success'])?>
 		</div>
 	    <?php } ?>
 
@@ -42,8 +42,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		  <thead>
 		    <tr>
 		      <th scope="col">#</th>
-		      <th scope="col">Category</th>
-		      <th scope="col">Action</th>
+		      <th scope="col">Kategori</th>
+		      <th scope="col">İşlem</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -52,8 +52,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		      <th scope="row"><?=$category['id'] ?></th>
 		      <td><?=$category['category'] ?></td>
 		      <td>
-		      	<a href="category-delete.php?id=<?=$category['id'] ?>" class="btn btn-danger">Delete</a>
-		      	<a href="category-edit.php?id=<?=$category['id'] ?>" class="btn btn-warning">Edit</a>
+		      	<a href="category-delete.php?id=<?=$category['id'] ?>" class="btn btn-danger">Sil</a>
+		      	<a href="category-edit.php?id=<?=$category['id'] ?>" class="btn btn-warning">Düzenle</a>
 		      </td>
 		    </tr>
 		    <?php } ?>
@@ -62,7 +62,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		</table>
 	<?php }else{ ?>
 		<div class="alert alert-warning">
-			Empty!
+			Kategori Bulunamadı!
 		</div>
 	<?php } ?>
 	 </div>

@@ -12,11 +12,11 @@ if(isset($_POST['uname']) &&
     $data = "uname=".$uname;
     
     if(empty($uname)){
-    	$em = "User name is required";
+    	$em = "Kullanıcı adı gerekli";
     	header("Location: ../login.php?error=$em&$data");
 	    exit;
     }else if(empty($pass)){
-    	$em = "Password is required";
+    	$em = "Şifre gerekli";
     	header("Location: ../login.php?error=$em&$data");
 	    exit;
     }else {
@@ -40,19 +40,19 @@ if(isset($_POST['uname']) &&
                  header("Location: ../blog.php");
                  exit;
              }else {
-               $em = "Incorect User name or password";
+               $em = "Yanlış kullanıcı adı veya şifre";
                header("Location: ../login.php?error=$em&$data");
                exit;
             }
 
           }else {
-            $em = "Incorect User name or password";
+            $em = "Yanlış kullanıcı adı veya şifre";
             header("Location: ../login.php?error=$em&$data");
             exit;
          }
 
       }else {
-         $em = "Incorect User name or password";
+         $em = "Yanlış kullanıcı adı veya şifre";
          header("Location: ../login.php?error=$em&$data");
          exit;
       }

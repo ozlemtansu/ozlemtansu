@@ -14,14 +14,14 @@ if (isset($_SESSION['admin_id']) &&
 	          WHERE post_id=?";
 	  $stmt = $conn->prepare($sql);
 	  $stmt->execute([$post_id]);
-	  $sm = "Successfully publish!"; 
+	  $sm = "Başarıyla yayımlandı!"; 
       header("Location: post.php?success=$sm");
       exit;
   }else {
   	$sql = "UPDATE post SET publish=0";
     $stmt = $conn->prepare($sql);
     $stmt->execute();
-    $sm = "Successfully unpublish!"; 
+    $sm = "Başarıyla yayından kaldırıldı!"; 
     header("Location: post.php?success=$sm");
     exit;
   }

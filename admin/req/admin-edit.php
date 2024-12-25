@@ -14,15 +14,15 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
       $id = $_SESSION['admin_id'];
 
       if(empty($fname)){
-         $em = "First name is required"; 
+         $em = "İsim gerekli"; 
          header("Location: ../profile.php?error=$em");
          exit;
       }else if(empty($lname)){
-         $em = "Last name is required"; 
+         $em = "Soyisim gerekli"; 
          header("Location: ../profile.php?error=$em");
          exit;
       }else if(empty($username)){
-         $em = "Username is required"; 
+         $em = "Kullanıcı adı gerekli"; 
          header("Location: ../profile.php?error=$em");
          exit;
       }
@@ -34,11 +34,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username']) ) {
       
      if ($res) {
         $_SESSION['username'] = $username;
-          $sm = "Successfully edited!"; 
+          $sm = "Başarıyla düzenlendi!"; 
           header("Location: ../profile.php?success=$sm");
           exit;
       }else {
-        $em = "Unknown error occurred"; 
+        $em = "Bilinmeyen bir hata oluştu"; 
         header("Location: ../profile.php?error=$em");
         exit;
       }

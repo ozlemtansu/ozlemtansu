@@ -69,11 +69,11 @@ if (isset($_GET['post_id'])) {
     <?php } } else{ ?>
     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
     <?php } ?>
-   Likes (
+   Beğeniler (
     <span><?php 
      echo likeCountByPostID($conn, $post['post_id']);
       ?></span> )
-      <i class="fa fa-comment" aria-hidden="true"></i> comments (
+      <i class="fa fa-comment" aria-hidden="true"></i> Yorumlar (
 	        <?php 
             echo CountByPostID($conn, $post['post_id']);
 	         ?>
@@ -87,7 +87,7 @@ if (isset($_GET['post_id'])) {
 	      method="post"
 	      id="comments">
 
-	  <h5 class="mt-4 text-secondary">Add comment</h5>
+	  <h5 class="mt-4 text-secondary">Yorum Ekle</h5>
 	  <?php if(isset($_GET['error'])){ ?>
 		<div class="alert alert-danger" role="alert">
 		  <?php echo htmlspecialchars($_GET['error']); ?>
@@ -109,7 +109,7 @@ if (isset($_GET['post_id'])) {
 	           value="<?=$id?>"
 	           hidden>
 	  </div>
-	  <button type="submit" class="btn btn-primary">Comment</button>
+	  <button type="submit" class="btn btn-primary">Yorumlar</button>
 	</form> <hr>
        <div>
   	<div class="comments">
@@ -138,7 +138,7 @@ if (isset($_GET['post_id'])) {
 <aside class="aside-main">
    <div class="list-group category-aside">
 	  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-	    Category
+	    Kategori
 	  </a>
 	  <?php foreach ($categories as $category ) { ?>
 	  <a href="category.php?category_id=<?=$category['id']?>"

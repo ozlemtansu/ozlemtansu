@@ -45,8 +45,8 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
  <div class="container mt-5">
  <h1 class="display-4 mb-4 fs-3">
  			<?php if ($category != 0)
- 			  echo "Articles about '".$category['category']."'";  
- 			else echo "Articles"; ?>
+ 			  echo "Başlıklar hakkında '".$category['category']."'";  
+ 			else echo "Başlıklar"; ?>
  	
 </h1>
   
@@ -78,7 +78,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
             $p = substr($p, 0, 200);               
 	     ?>
 	    <p class="card-text"><?=$p?>...</p>
-	    <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Read more</a>
+	    <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Daha fazla oku</a>
 	    <hr>
         <div class="d-flex justify-content-between">
         	<div class="react-btns">
@@ -102,12 +102,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 		    <?php } } else{ ?>
 		    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
 		    <?php } ?>
-		   Likes (
+		    Beğeniler (
     <span><?php 
    echo likeCountByPostID($conn, $post['post_id']);
      ?></span> )
 		    <a href="blog-view.php?post_id=<?=$post['post_id']?>#comments">    
-        	<i class="fa fa-comment" aria-hidden="true"></i> Comments (
+        	<i class="fa fa-comment" aria-hidden="true"></i> Yorumlar (
 		        <?php 
                     echo CountByPostID($conn, $post['post_id']);
 		         ?>
@@ -124,7 +124,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
   	<?php }else {?> 
   		<main class="main-blog p-2">
 	  		<div class="alert alert-warning">
-	  			No posts yet.
+	  			Henüz gönderi yok.
 	  		</div>
   	    </main>
   	<?php } } ?>
@@ -133,7 +133,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 			  <a href="#" 
 			     class="list-group-item list-group-item-action active" 
 			     aria-current="true">
-			    Category
+			    Kategori
 			  </a>
 			  <?php foreach ($categories5 as $category ) { ?>
 			  <a href="category.php?category_id=<?=$category['id']?>" 

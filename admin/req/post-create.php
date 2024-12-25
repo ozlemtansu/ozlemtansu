@@ -13,11 +13,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
       $category = $_POST['category'];
 
       if(empty($title)){
-         $em = "Title is required"; 
+         $em = "Başlık gerekli"; 
          header("Location: ../post-add.php?error=$em");
          exit;
       }else if(empty($title)){
-         $em = "Title is required"; 
+         $em = "Başlık gerekli"; 
          header("Location: ../post-add.php?error=$em");
          exit;
       }else if(empty($category)){
@@ -31,7 +31,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
        $error = $_FILES['cover']['error']; 
        if ($error === 0) {
            if ($image_size > 130000) {
-               $em = "Sorry, your file is too large."; 
+               $em = "Üzgünüz, dosyanızın boyutu çok büyük."; 
                 header("Location: ../post-add.php?error=$em");
                 exit;
            }else {
@@ -50,7 +50,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
                   $stmt = $conn->prepare($sql);
                   $res = $stmt->execute([$title, $text, $category, $new_image_name]);
               }else {
-                $em = "You can't upload files of this type"; 
+                $em = "Bu tür dosyalar yükleyemezsiniz"; 
                 header("Location: ../post-add.php?error=$em");
                 exit;
               }
@@ -65,11 +65,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
       }
       
      if ($res) {
-          $sm = "Successfully Created!"; 
+          $sm = "Başarıyla oluşturuldu!"; 
           header("Location: ../post-add.php?success=$sm");
           exit;
       }else {
-        $em = "Unknown error occurred"; 
+        $em = "Bilinmeyen bir hata oluştu"; 
         header("Location: ../post-add.php?error=$em");
         exit;
       }

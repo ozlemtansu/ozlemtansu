@@ -6,7 +6,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Dashboard - Posts</title>
+	<title>Pano - Gönderiler</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="../css/side-bar.css">
@@ -23,8 +23,8 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 	?>
                
 	 <div class="main-table">
-	 	<h3 class="mb-3">All Posts 
-	 		<a href="post-add.php" class="btn btn-success">Add New</a></h3>
+	 	<h3 class="mb-3">Tüm Gönderiler
+	 		<a href="post-add.php" class="btn btn-success">Yeni Ekle</a></h3>
 	 	<?php if (isset($_GET['error'])) { ?>	
 	 	<div class="alert alert-warning">
 			<?=htmlspecialchars($_GET['error'])?>
@@ -42,11 +42,11 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		  <thead>
 		    <tr>
 		      <th scope="col">#</th>
-		      <th>Title</th>
-		      <th>Category</th>
-		      <th>Comments</th>
-		      <th>Likes</th>
-		      <th>Action</th>
+		      <th>Başlık</th>
+		      <th>Kategori</th>
+		      <th>Yorumlar</th>
+		      <th>Beğeniler</th>
+		      <th>İşlemler</th>
 		    </tr>
 		  </thead>
 		  <tbody>
@@ -73,16 +73,16 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		         ?>
 		     </td>
 		      <td>
-		      	<a href="post-delete.php?post_id=<?=$post['post_id'] ?>" class="btn btn-danger">Delete</a>
-		      	<a href="post-edit.php?post_id=<?=$post['post_id'] ?>" class="btn btn-warning">Edit</a>
+		      	<a href="post-delete.php?post_id=<?=$post['post_id'] ?>" class="btn btn-danger">Sil</a>
+		      	<a href="post-edit.php?post_id=<?=$post['post_id'] ?>" class="btn btn-warning">Düzenle</a>
                 <?php 
                    if ($post['publish'] == 1) {
                  ?>
-		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=1" class="btn btn-link disabled">Public</a>
-		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=0" class="btn btn-link " >Privet</a>
+		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=1" class="btn btn-link disabled">Yayımlandı</a>
+		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=0" class="btn btn-link " >Gizli</a>
 		      <?php }else{ ?>
-		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=1" class="btn btn-link ">Public</a>
-		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=0" class="btn btn-link disabled" >Privet</a>
+		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=1" class="btn btn-link ">Yayımla</a>
+		      	<a href="post-publish.php?post_id=<?=$post['post_id'] ?>&publish=0" class="btn btn-link disabled" >Gizli</a>
 		      <?php } ?>
 		      </td>
 		    </tr>
@@ -92,7 +92,7 @@ if (isset($_SESSION['admin_id']) && isset($_SESSION['username'])) {
 		</table>
 	<?php }else{ ?>
 		<div class="alert alert-warning">
-			Empty!
+			Hiç Gönderi Bulunamadı!
 		</div>
 	<?php } ?>
 	 </div>

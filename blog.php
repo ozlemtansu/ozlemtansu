@@ -17,7 +17,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 		if(isset($_GET['search'])){ 
 			  echo "search '".htmlspecialchars($_GET['search'])."'"; 
 		}else{
-			echo "Blog Page";
+			echo "Blog Sayfası";
 		} ?>
 	</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
@@ -50,7 +50,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
   	   	<h1 class="display-4 mb-4 fs-3">
   	   	<?php 
 				if(isset($_GET['search'])){ 
-					  echo "Search <b>'".htmlspecialchars($_GET['search'])."'</b>"; 
+					  echo "Ara <b>'".htmlspecialchars($_GET['search'])."'</b>"; 
 				}?></h1>
   	   	<?php foreach ($posts as $post) { ?>
   	   	   <div class="card main-blog-card mb-5">
@@ -62,7 +62,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
                     $p = substr($p, 0, 200);               
 			     ?>
 			    <p class="card-text"><?=$p?>...</p>
-			    <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Read more</a>
+			    <a href="blog-view.php?post_id=<?=$post['post_id']?>" class="btn btn-primary">Daha fazla oku</a>
 			    <hr>
                 <div class="d-flex justify-content-between">
                 	<div class="react-btns">
@@ -86,12 +86,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 				    <?php } } else{ ?>
 				    <i class="fa fa-thumbs-up" aria-hidden="true"></i>
 				    <?php } ?>
-				   Likes (
+				   Beğeniler (
 	        <span><?php 
            echo likeCountByPostID($conn, $post['post_id']);
 	         ?></span> )
 				    <a href="blog-view.php?post_id=<?=$post['post_id']?>#comments">    
-                	<i class="fa fa-comment" aria-hidden="true"></i> Comments (
+                	<i class="fa fa-comment" aria-hidden="true"></i> Yorumlar (
 				        <?php 
 		                    echo CountByPostID($conn, $post['post_id']);
 				         ?>
@@ -109,12 +109,12 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
   	   	<main class="main-blog p-2">
   	   		<?php if($notFound){ ?>
   	   			<div class="alert alert-warning"> 
-  	   				No search results found 
+  	   				Arama sonucu bulunamadı 
   	   				<?php echo " - <b>key = '".htmlspecialchars($_GET['search'])."'</b>" ?>
   	   			</div>
   	   		<?php }else{ ?>
   	   			<div class="alert alert-warning"> 
-  	   				No posts yet.
+  	   				Henüz gönderi yok.
   	   			</div>
   	   		<?php } ?>
   	   	</main>
@@ -124,7 +124,7 @@ if (isset($_SESSION['user_id']) && isset($_SESSION['username'])) {
 			  <a href="#" 
 			     class="list-group-item list-group-item-action active" 
 			     aria-current="true">
-			    Category
+			    Kategori
 			  </a>
 			  <?php foreach ($categories as $category ) { ?>
 			  <a href="category.php?category_id=<?=$category['id']?>" 

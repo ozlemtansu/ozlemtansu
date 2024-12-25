@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Login</title>
+	<title>Giriş</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -15,7 +15,7 @@
     	      action="php/login.php" 
     	      method="post">
 
-    		<h4 class="display-4  fs-1">LOGIN</h4><br>
+    		<h4 class="display-4  fs-1">GİRİŞ</h4><br>
     		<?php if(isset($_GET['error'])){ ?>
     		<div class="alert alert-danger" role="alert">
 			  <?php echo htmlspecialchars($_GET['error']); ?>
@@ -23,7 +23,7 @@
 		    <?php } ?>
 
 		  <div class="mb-3">
-		    <label class="form-label">User name</label>
+		    <label class="form-label">Kullanıcı Adı</label>
 		    <input type="text" 
 		           class="form-control"
 		           name="uname"
@@ -31,18 +31,18 @@
 		  </div>
 
 		  <div class="mb-3">
-		    <label class="form-label">Password</label>
+		    <label class="form-label">Şifre</label>
 		    <input type="password" 
 		           class="form-control"
 		           name="pass">
 		  </div>
 		  
-		  <button type="submit" class="btn btn-primary">Login</button>
-		  <a href="admin-login.php" class="link-secondary">Admin Login</a>
+		  <button type="submit" class="btn btn-primary">Giriş Yap</button>
+		  <a href="admin-login.php" class="link-secondary">Admin Girişi</a>
 		  &nbsp;&nbsp;&nbsp;
 		  <a href="blog.php" class="link-secondary">Blog</a>
 		  &nbsp;&nbsp;&nbsp;
-		  <a href="signup.php" class="link-secondary">Sign Up</a>
+		  <a href="signup.php" class="link-secondary">Kayıt Ol</a>
 		</form>
     </div>
 </body>

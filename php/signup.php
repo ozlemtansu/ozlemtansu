@@ -13,15 +13,15 @@ if(isset($_POST['fname']) &&
     $data = "fname=".$fname."&uname=".$uname;
     
     if (empty($fname)) {
-    	$em = "Full name is required";
+    	$em = "İsim soyisim gerekli.";
     	header("Location: ../signup.php?error=$em&$data");
 	    exit;
     }else if(empty($uname)){
-    	$em = "User name is required";
+    	$em = "Kullanıcı adı gerekli";
     	header("Location: ../signup.php?error=$em&$data");
 	    exit;
     }else if(empty($pass)){
-    	$em = "Password is required";
+    	$em = "Şifre gerekli";
     	header("Location: ../signup.php?error=$em&$data");
 	    exit;
     }else {
@@ -34,7 +34,7 @@ if(isset($_POST['fname']) &&
     	$stmt = $conn->prepare($sql);
     	$stmt->execute([$fname, $uname, $pass]);
 
-    	header("Location: ../signup.php?success=Your account has been created successfully");
+    	header("Location: ../signup.php?success=Hesabınız başarıyla oluşturuldu.");
 	    exit;
     }
 
